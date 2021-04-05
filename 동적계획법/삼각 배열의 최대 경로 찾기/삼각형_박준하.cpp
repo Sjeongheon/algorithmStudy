@@ -1,5 +1,5 @@
 /*
-* 2018114686 ¹ÚÁØÇÏ Àú´Â ÀÌ ¼Ò½º ÄÚµå¸¦ ´Ù¸¥ ¼Ò½º ÄÚµå¸¦ º¹»çÇÏÁö ¾Ê°í Á÷Á¢ ÀÛ¼ºÇÏ¿´½À´Ï´Ù.
+* 2018114686 ë°•ì¤€í•˜ ì €ëŠ” ì´ ì†ŒìŠ¤ ì½”ë“œë¥¼ ë‹¤ë¥¸ ì†ŒìŠ¤ ì½”ë“œë¥¼ ë³µì‚¬í•˜ì§€ ì•Šê³  ì§ì ‘ ìž‘ì„±í•˜ì˜€ìŠµë‹ˆë‹¤.
 */
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
@@ -9,15 +9,15 @@
 #define MAX 130
 
 int N;
-int T[MAX][MAX];	//¿ø·¡ ÀÔ·Â °ª
-int D[MAX][MAX];	//°æ·ÎÀÇ ±æÀÌ ÀúÀå
-int P[MAX][MAX];	//°æ·Î Å½»ö¿ë
+int T[MAX][MAX];	//ì›ëž˜ ìž…ë ¥ ê°’
+int D[MAX][MAX];	//ê²½ë¡œì˜ ê¸¸ì´ ì €ìž¥
+int P[MAX][MAX];	//ê²½ë¡œ íƒìƒ‰ìš©
 
 void Solve() {
-	//¾Æ·§Ãþ ºÎÅÍ ¼ø¼­´ë·Î ¼øÈ¸
+	//ì•„ëž«ì¸µ ë¶€í„° ìˆœì„œëŒ€ë¡œ ìˆœíšŒ
 	for (int i = N - 2; i >= 0; i--) {
 		for (int j = 0; j < i+1; j++) {
-			//¹Ù·Î¾Æ·¡, ¿À¸¥ÂÊ ¾Æ·¡ Áß Å« °ÍÀ» ¼±ÅÃ
+			//ë°”ë¡œì•„ëž˜, ì˜¤ë¥¸ìª½ ì•„ëž˜ ì¤‘ í° ê²ƒì„ ì„ íƒ
 			if (D[i+1][j] <= D[i+1][j + 1]) {
 				P[i][j] = j + 1;
 				D[i][j] += D[i + 1][j + 1];
@@ -40,7 +40,7 @@ void PrintPath() {
 }
 
 int main() {
-	//ÃÊ±âÈ­ ¹× ÀÔ·Â
+	//ì´ˆê¸°í™” ë° ìž…ë ¥
 	memset(T, 0, sizeof(T));
 	memset(D, 0, sizeof(D));
 	memset(P, 0, sizeof(P));
@@ -53,7 +53,7 @@ int main() {
 		}
 	}
 	
-	//¾Ë°í¸®Áò ½ÇÇà ¹× Ãâ·Â
+	//ì•Œê³ ë¦¬ì¦˜ ì‹¤í–‰ ë° ì¶œë ¥
 	Solve();
 
 	printf("%d\n", D[0][0]);
@@ -61,3 +61,5 @@ int main() {
 
 	return 0;
 }
+
+//feed back
