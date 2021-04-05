@@ -17,7 +17,7 @@ void Bi(int n, int k) {
 	}
 
 
-	/*cout << "ÇöÀç ¼ö¿­:" ;
+	/*cout << "Ã‡Ã¶Ã€Ã§ Â¼Ã¶Â¿Â­:" ;
 	for (int i = 0;i < cur;i++) {
 		cout << B[i] << "  ";
 	}
